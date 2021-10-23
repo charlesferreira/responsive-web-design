@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+:root {
+  --jurema-blue: hsl(210deg, 100%, 35%);
+  --jurema-white: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+}
+
+h1 {
+  font-family: 'Parisienne', cursive;
+  font-size: 2.5rem;
+}
+
+#main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#title {
+  order: 2;
+}
+
+#img-div {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  order: 1;
+  width: 100%;
+}
+
+#img-div::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top:0;
+  left: 0;
+  height: 60%;
+  right: 0;
+  background-color: var(--jurema-blue, blue);
+}
+
+#image {
+  display: block;
+  margin: auto;
+  height: auto;
+  width: 320px;
+  max-width: 100%;
+}
+
+#img-caption {
+  padding: 1.5rem 1rem;
+  font-family: 'Parisienne', cursive;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--jurema-white, white);
+}
+
+#tribute-info {
+  order: 3;
+}
