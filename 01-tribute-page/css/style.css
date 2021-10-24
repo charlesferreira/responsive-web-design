@@ -1,40 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@0,300;1,300&display=swap');
 
 :root {
-  --jurema-blue: hsl(210deg, 100%, 35%);
+  --jurema-blue: hsl(210deg, 100%, 30%);
   --jurema-white: white;
+  --jurema-black: black;
+  --jurema-font-title: 'Lobster', cursive;
+  --jurema-font-body: 'Open Sans', sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-  font-size: 18px;
-}
-
-h1 {
-  font-family: 'Parisienne', cursive;
-  font-size: 2.5rem;
+  font-size: 16px;
+  font-family: var(--jurema-font-body);
+  font-weight: 300;
+  color: var(--jurema-black);
 }
 
 #main {
   position: relative;
+  z-index: -2;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-#title {
-  order: 2;
+  background-color: var(--jurema-white);
 }
 
 #img-div {
+  position: relative;
+  order: 1;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  order: 1;
   width: 100%;
 }
 
@@ -44,9 +45,9 @@ h1 {
   z-index: -1;
   top:0;
   left: 0;
-  height: 60%;
   right: 0;
-  background-color: var(--jurema-blue, blue);
+  height: 75%;
+  background-color: var(--jurema-blue);
 }
 
 #image {
@@ -59,12 +60,90 @@ h1 {
 
 #img-caption {
   padding: 1.5rem 1rem;
-  font-family: 'Parisienne', cursive;
-  font-size: 2rem;
+  font-family: var(--jurema-font-body);
+  font-size: 1rem;
+  font-style: italic;
   text-align: center;
-  color: var(--jurema-white, white);
+  color: var(--jurema-white);
+}
+
+#title {
+  order: 2;
+  font-family: var(--jurema-font-title);
+  font-size: 3.5rem;
+  margin: 1.5rem;
 }
 
 #tribute-info {
   order: 3;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+#timeline {
+  padding: 1.5rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  list-style: none;
+  width: 100%;
+
+}
+
+#timeline li {
+  position: relative;
+  padding: 0 1rem 1.5rem;
+  width: 50%;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+#timeline li:nth-child(even) {
+  align-self: start;
+  text-align: right;
+}
+
+#timeline li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: -1rem;
+  width: 2px;
+  background-color: var(--jurema-blue);
+}
+
+#timeline li:not(:last-child):nth-child(odd)::before {
+  left: -1px;
+}
+
+#timeline li:not(:last-child):nth-child(even)::before {
+  right: -1px;
+}
+
+#timeline time {
+  position: relative;
+  display: block;
+  font-family: var(--jurema-font-title);
+  font-size: 1.5rem;
+}
+
+#timeline time::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--jurema-white);
+  border: 2px solid var(--jurema-blue);
+  border-radius: 50%;
+}
+
+#timeline li:nth-child(odd) time::before {
+  left: calc(-1.5rem - 2px);
+}
+
+#timeline li:nth-child(even) time::before {
+  right: calc(-1.5rem - 2px);
 }
