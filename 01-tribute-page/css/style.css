@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap');
 
 :root {
   --jurema-blue: hsl(210deg, 100%, 30%);
   --jurema-white: white;
   --jurema-black: black;
+  --jurema-light: rgba(255, 255, 255, 0.30);
   --jurema-font-title: 'Lobster', cursive;
   --jurema-font-body: 'Open Sans', sans-serif;
 }
@@ -23,7 +24,7 @@ html {
 
 #main {
   position: relative;
-  z-index: -2;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +62,7 @@ html {
 #img-caption {
   padding: 1.5rem 1rem;
   font-family: var(--jurema-font-body);
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-style: italic;
   text-align: center;
   color: var(--jurema-white);
@@ -72,18 +73,18 @@ html {
   font-family: var(--jurema-font-title);
   font-size: 3.5rem;
   margin: 1.5rem;
+  text-align: center;
 }
 
 #tribute-info {
   order: 3;
   width: 100%;
   text-align: center;
-  padding-bottom: 2rem;
 }
 
 #timeline {
   padding: 1.5rem 2rem;
-  position: relative;
+  position: relative; 
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -146,4 +147,47 @@ html {
 
 #timeline li:nth-child(even) time::before {
   right: calc(-1.5rem - 2px);
+}
+
+p {
+  padding: 0 2rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+#tribute-link {
+  color: var(--jurema-blue);
+}
+
+#tribute-link:hover {
+  text-decoration: none;
+}
+
+blockquote {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 150%;
+  color: var(--jurema-white);
+  background-color: var(--jurema-blue);
+}
+
+blockquote p {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  --quote-size: 5rem;
+  --quote-padding: -2rem;
+}
+
+blockquote p::before {
+  position: absolute;
+  font-size: var(--quote-size);
+  color: var(--jurema-light);
+  content: "“";
+  top: 0;
+  left: var(--quote-padding);
 }
