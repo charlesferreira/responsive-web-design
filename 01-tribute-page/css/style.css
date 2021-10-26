@@ -91,7 +91,7 @@ body {
   position: relative; 
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   list-style: none;
   width: 100%;
   max-width: 1200px;
@@ -114,7 +114,7 @@ body {
 }
 
 #timeline li:nth-child(even) {
-  align-self: start;
+  align-self: flex-start;
   text-align: right;
 }
 
@@ -205,4 +205,25 @@ blockquote p::before {
   content: "“";
   top: 0;
   left: var(--quote-padding);
+}
+
+@media (max-width: 480px) {
+
+  #timeline li {
+    width: 100%;
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  #timeline li:nth-child(even) {
+    text-align: left;
+  }
+
+  #timeline li:not(:last-child):nth-child(even)::before {
+    left: -1px;
+  }
+
+  #timeline li:nth-child(even) time::before {
+    left: calc(-1.5rem - 2px);
+  }
 }
