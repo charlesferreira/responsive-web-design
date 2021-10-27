@@ -1,12 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+
 :root {
-  --my-gradient: linear-gradient(45deg, hsl(100, 100%, 50%), hsl(190, 100%, 50%));
+  --color-stop-1: hsl(90, 100%, 45%);
+  --color-stop-2: hsl(150, 100%, 65%);
+  --gradient-gray: linear-gradient(#e9e9e9, #fcfcfc);
+  --gradient-main: linear-gradient(45deg, var(--color-stop-1), var(--color-stop-2));
+  --color-gray-light: #c3c3c3;
+  --color-gray-medium: #666;
+  --color-gray-dark: #454545;
+  --color-white: white;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
 
 html {
@@ -14,7 +24,7 @@ html {
 }
 
 body {
-  background: linear-gradient(#e9e9e9, #fcfcfc);
+  background: var(--gray-gradient);
   min-width: 100vw;
   min-height: 100vh;
   padding: 5rem 1rem;
@@ -22,6 +32,7 @@ body {
 
 main {
   position: relative;
+  z-index: 1;
   margin: auto;
   width: 100%;
   max-width: 480px;
@@ -29,7 +40,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: white;
+  background: var(--color-white);
   box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15), 0 2px 20px 0 rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
 }
@@ -45,11 +56,13 @@ header {
 }
 
 #title {
-  /* font */
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 #description {
-  padding: 1rem 0;
+  margin-top: 2rem;
+  color: var(--color-gray-medium);
 }
 
 #survey-form {
@@ -58,24 +71,57 @@ header {
   width: 100%;
 }
 
-label,
+.form-group > label,
 fieldset {
-  margin-top: 1rem;
+  margin-top: 2.5rem;
+}
+
+.form-group > label,
+legend {
+  position: relative;
+  font-size: 90%;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-gray-dark);
+  text-transform: uppercase;
+}
+
+label + input[required] {
+  color: red;
 }
 
 fieldset {
-  display: block;
+  display: flex;
+  flex-direction: column;
   border: none;
+}
+
+fieldset label {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--color-gray-medium);
+}
+
+fieldset label input {
+  margin-right: 0.25rem;
 }
 
 input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea {
   display: block;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0;
   border: 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: var(--color-gray-medium);
   outline: 0;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 5rem;
 }
 
 .form-group {
@@ -84,24 +130,65 @@ textarea {
   flex-direction: column;
 }
 
-.form-group:focus-within::after {
+.form-group::after {
   content: "";
   position: absolute;
   bottom: -3px;
   width: 100%;
   height: 3px;
-  background: var(--my-gradient);
+  background: var(--gradient-gray);
+}
+
+.form-group:focus-within::after {
+  background: var(--gradient-main);
+}
+
+.form-group:focus-within label::before,
+fieldset:focus-within legend::before {
+  content: ">";
+  position: absolute;
+  left: -1rem;
+  width: 0;
+  height: 0;
+  border: 0.5rem solid;
+  color: transparent;
+  border-left-color: var(--color-stop-1);
 }
 
 ::placeholder {
-  color: #c3c3c3;
+  color: var(--color-gray-light);
 }
 
 #submit {
   position: relative;
-  margin-top: 2rem;
+  margin: 3rem auto 0;
   padding: 0.75rem;
+  width: calc(100% - 6px);
   border-radius: 10rem;
+  border: 0;
   text-transform: uppercase;
-  font-size: 1rem;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: var(--gradient-main);
+  color: white;
+  outline: 0;
+}
+
+#submit::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 10rem;
+  background: var(--gradient-main);
+}
+
+#submit:focus {
+  background: white;
+  color: var(--color-stop-1);
+  text-shadow: none;
 }
