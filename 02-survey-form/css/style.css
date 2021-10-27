@@ -1,0 +1,107 @@
+:root {
+  --my-gradient: linear-gradient(45deg, hsl(100, 100%, 50%), hsl(190, 100%, 50%));
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: linear-gradient(#e9e9e9, #fcfcfc);
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 5rem 1rem;
+}
+
+main {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 480px;
+  padding: 4rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15), 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+main > * {
+  max-width: 80%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#title {
+  /* font */
+}
+
+#description {
+  padding: 1rem 0;
+}
+
+#survey-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label,
+fieldset {
+  margin-top: 1rem;
+}
+
+fieldset {
+  display: block;
+  border: none;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  font-size: 1rem;
+  outline: 0;
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group:focus-within::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background: var(--my-gradient);
+}
+
+::placeholder {
+  color: #c3c3c3;
+}
+
+#submit {
+  position: relative;
+  margin-top: 2rem;
+  padding: 0.75rem;
+  border-radius: 10rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
