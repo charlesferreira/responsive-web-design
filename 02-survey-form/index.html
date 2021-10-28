@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Survey Form</title>
+    <title>Fenômenos Naturais</title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -13,77 +13,118 @@
   <body>
     <main>
       <header>
-        <h1 id="title">Some survey</h1>
-        <p id="description">Thank you for taking our survey.</p>
+        <h1 id="title">Fenômenos Naturais</h1>
+        <p id="description">
+          Esta rápida pesquisa visa melhor compreender o potencial turístico em torno de fenômenos natuais.
+        </p>
       </header>
 
       <form action="#" id="survey-form" method="post">
-        <!-- name -->
+        <!-- nome -->
         <div class="form-group">
-          <label for="name" id="name-label">Name</label>
-          <input type="text" id="name" placeholder="John Doe" required autofocus />
+          <label for="name" id="name-label">Nome</label>
+          <input type="text" id="name" placeholder="Insira seu nome" required autofocus />
         </div>
 
         <!-- email -->
         <div class="form-group">
           <label for="email" id="email-label">Email</label>
-          <input type="email" id="email" placeholder="john@example.net" required />
+          <input type="email" id="email" placeholder="Insira seu email" required />
         </div>
 
-        <!-- number -->
+        <!-- gênero -->
         <div class="form-group">
-          <label for="number" id="number-label">Age</label>
-          <input type="number" id="number" placeholder="35" min="1" max="100" />
-        </div>
-
-        <!-- dropdown -->
-        <div class="form-group">
-          <label for="dropdown" id="dropdown-label">Dropdown</label>
+          <label for="dropdown" id="dropdown-label">Gênero <span>Opcional</span></label>
           <select name="" id="dropdown">
-            <option value="0">0</option>
-            <option value="1">1</option>
+            <option value disabled selected>Selecionar</option>
+            <option>Não-binário</option>
+            <option>Feminino</option>
+            <option>Masculino</option>
+            <option>Não desejo informar</option>
           </select>
         </div>
 
-        <!-- radio -->
-        <fieldset>
-          <legend>Radio</legend>
-          <label for="radio-option-0">
-            <input type="radio" name="radio" id="radio-option-0" value="0" /> Lorem ipsum dolor sit.
-          </label>
-          <label for="radio-option-1">
-            <input type="radio" name="radio" id="radio-option-1" value="1" /> Amet consectetur adipisicing elit
-          </label>
-          <label for="radio-option-2">
-            <input type="radio" name="radio" id="radio-option-2" value="2" /> Error recusandae et corporis
-          </label>
-        </fieldset>
-
-        <!-- checkboxes -->
-        <fieldset>
-          <legend>Checkboxes</legend>
-          <label for="checkbox-option-0">
-            <input type="checkbox" name="checkbox[]" id="checkbox-option-0" value="0" /> Nobis delectus ratione voluptas
-          </label>
-          <label for="checkbox-option-1">
-            <input type="checkbox" name="checkbox[]" id="checkbox-option-1" value="1" /> Unde libero dolorem magnam
-          </label>
-          <label for="checkbox-option-2">
-            <input type="checkbox" name="checkbox[]" id="checkbox-option-2" value="2" /> Accusamus voluptate deserunt
-            soluta
-          </label>
-        </fieldset>
-
-        <!-- comments -->
+        <!-- renda -->
         <div class="form-group">
-          <label for="comments" id="comments-label">Comments</label>
-          <textarea id="comments" placeholder="Anything else you'd like us to know?"></textarea>
+          <label for="number" id="number-label">Renda familiar <span>Opcional</span></label>
+          <input type="number" id="number" placeholder="ex: 10000" min="0" max="100000" step="500" />
         </div>
 
-        <button id="submit">Submit</button>
+        <!-- outros continentes -->
+        <fieldset>
+          <legend>Você já viajou para outro(s) continente(s)?</legend>
+          <label for="radio-option-0">
+            <input type="radio" name="radio" id="radio-option-0" value="0" /> Ainda não
+          </label>
+          <label for="radio-option-1">
+            <input type="radio" name="radio" id="radio-option-1" value="1" /> Sim, uma única vez
+          </label>
+          <label for="radio-option-2">
+            <input type="radio" name="radio" id="radio-option-2" value="2" /> Sim, mais de uma vez
+          </label>
+          <label for="radio-option-3">
+            <input type="radio" name="radio" id="radio-option-3" value="3" /> Conheço todos os continentes
+          </label>
+        </fieldset>
+
+        <!-- fenômenos -->
+        <fieldset>
+          <legend>Quais destes fenômenos você gostaria de presenciar se tivesse a oportunidade?</legend>
+          <label for="fenomeno-1"> <input type="checkbox" name="fenomenos[]" id="fenomeno-1" value="1" /> Neve </label>
+          <label for="fenomeno-2">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-2" value="2" /> Geyser
+          </label>
+          <label for="fenomeno-3">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-3" value="3" /> Aurora polar
+          </label>
+          <label for="fenomeno-4">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-4" value="4" /> Vulcões
+          </label>
+          <label for="fenomeno-5">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-5" value="5" /> Terremoto
+          </label>
+          <label for="fenomeno-6">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-6" value="6" /> Tsunami
+          </label>
+          <label for="fenomeno-7">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-7" value="7" /> Pororoca
+          </label>
+          <label for="fenomeno-8">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-8" value="8" /> Bioluminescência nos mares
+          </label>
+          <label for="fenomeno-9">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-9" value="9" /> Chaminés de neve
+          </label>
+          <label for="fenomeno-10">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-10" value="10" /> Flores de gelo
+          </label>
+          <label for="fenomeno-11">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-11" value="11" /> Desertos floridos
+          </label>
+          <label for="fenomeno-12">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-12" value="12" /> Tempestade de areia
+          </label>
+          <label for="fenomeno-13">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-13" value="13" /> Dedo de gelo
+          </label>
+          <label for="fenomeno-14">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-14" value="14" /> Estalactites
+          </label>
+          <label for="fenomeno-15">
+            <input type="checkbox" name="fenomenos[]" id="fenomeno-15" value="15" /> Avalanche
+          </label>
+        </fieldset>
+
+        <!-- comentários -->
+        <div class="form-group">
+          <label for="comments" id="comments-label">Comentários</label>
+          <textarea id="comments" placeholder="Deixe aqui suas sugestões e comentários"></textarea>
+        </div>
+
+        <button id="submit">Enviar</button>
       </form>
     </main>
 
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
   </body>
 </html>
